@@ -2,6 +2,15 @@
 
 This repo have all what's required to get my lcloud recruitment done.
 
+## Initial setup and connection
+
+To connect to AWS instance i used PuTTY
+
+I've noticed i've been given `pem` file which putty is not accepting, so i used PuTTY Gen to convert it to private `ppk` file
+
+Now i was able to connect to given instance using this key
+
+
 
 ## meta-data.sh
 
