@@ -215,8 +215,9 @@ Also i've used `certbot --nginx` to create Let's Encrypt SSL Certificate
 I've noticed some port collisions between gitlab and jenkins so i edited `jenkins.service` file in `/usr/lib/systemd/system` to config `Environment="JENKINS_PORT=9999"`
 and restarted jenkins also i've change port in nginx config to `proxy_pass http://localhost:9999;` 
 
-And restarted nginx
+And restarted nginx and jenkins
 
+`sudo systemctl restart jenkins`
 `sudo systemctl restart nginx`
 
 and started gitlab
