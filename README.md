@@ -165,4 +165,21 @@ Next step is to add the GitLab package repository and install the package:
 
 Next step is to configure GitLab their own configuration tool:
 
-`sudo gitlab-ctl reconfigure`
+`sudo gitlab-ctl reconfigure` This command took a very long time to finish 
+
+Now i need to configure HTTPS using Let's Encrypt certificate
+
+I need to enable automatic certificate regeneration in file `/etc/gitlab/gitlab.rb`
+
+In this file i've uncommented following lines and changed them according to instruction:
+
+```
+
+external_url 'https://gitlab.<given_domain>'
+
+....
+letsencrypt['enable'] = true
+letsencrypt['contact_emails'] = ['your-email@example.com'] # here comes my e-mail address
+```
+
+
