@@ -148,6 +148,23 @@ Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
 
 I've unlocked the jenkins with the path provived on website and installed required plugins
 
+
+Also with:
+
+
+```
+export DOMAIN="jenkins.<given_domain>"
+export ALERTS_EMAIL="webmaster@example.com"
+
+sudo certbot --nginx --redirect -d $DOMAIN --preferred-challenges http --agree-tos -n -m $ALERTS_EMAIL --keep-until-expiring
+
+sudo systemctl restart nginx
+```
+I've configured SSL certificate
+
+
+
+
 ## Gitlab task
 
 To install gitlab and configure it properly first thing i need to do is to install dependencies. To use correct installation steps i've used the install instruction from official gitlab website `https://about.gitlab.com/install/#ubuntu`
