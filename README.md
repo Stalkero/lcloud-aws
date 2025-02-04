@@ -123,9 +123,9 @@ The content of this configurationa are as below:
 
 `server {
     listen 80;
-    server_name your-domain.r5d4.applicant.lcloud.pl;
+    server_name your-domain.r5d4.applicant.lcloud.pl;`
 
-    location / {
+    `location / {
         proxy_pass http://localhost:8080;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
