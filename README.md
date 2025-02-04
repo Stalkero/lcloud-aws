@@ -106,3 +106,29 @@ Ok. jenkins service has already been running if it wouldn't would have to use:
 To confirm jenkins is running i've entered given ip to the instane and tried connecting to jenkins with by web browser by using:
 
 `<given_ip>:8080` and it was running, YAY
+
+
+
+Next task was to configure reverse proxy so the jenkins can be accessed by an URL jenkins.<given_domain>
+
+First what i needed to do was to install nginx to do such a thing:
+
+`sudo apt-get install nginx`
+
+After that i need to create proper configuration of reverse proxy for nginx so i've created a configuration file `jenkins` in this path:
+
+`/etc/nginx/sites-available/jenkins`
+
+The content of this configurationa are as below:
+
+`server {
+    listen 80;
+    server_name your-domain.r5d4.applicant.lcloud.pl;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}`
