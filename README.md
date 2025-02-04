@@ -67,5 +67,31 @@ And enabled swap file by using:
 
 `swapon /swapfile`
 
-## Installing jenkins 
 To confirm swap have been enabled i've cheked it with `htop` and the swap file has been enabled with a size of 4GB
+
+## Installing jenkins 
+
+To install jenkins i need to install openjdk 
+
+So i've installed it with:
+
+`apt install openjdk-11-jdk -y`
+
+Next thing to do is to add repo key and repo to apt
+
+`sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key`
+
+`echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+`
+
+After adding previous ones i was able to install jenkins. But firstly i need to update repos
+`sudo apt-get update`
+
+And now i am able to install jenkins
+
+`sudo apt-get install jenkins`
+
+
