@@ -12,7 +12,7 @@ Now i was able to connect to given instance using this key
 
 First thing to do was to update repos by:
 
-`apt-get update`
+`sudo apt-get update`
 
 
 ## meta-data.sh
@@ -21,9 +21,9 @@ The S3 Bash Script Task is designed to gather metadata from an AWS EC2 instance,
 
 To be able to execute this script i needed to have AWS CLI installed on the instance
 
-The first thing what i've done was to install AWS CLI with `apt-get install awscli` but apt return no such result of a package `awscli`.
+The first thing what i've done was to install AWS CLI with `sudo apt-get install awscli` but apt return no such result of a package `awscli`.
 
-So i've tried with `apt-get install aws-cli` and again still no results. 
+So i've tried with `sudo apt-get install aws-cli` and again still no results. 
 
 But this time shell suggested that `aws-cli` is available to install with snap.
 
@@ -49,23 +49,23 @@ To confirm i am not using any swap i used `htop` to verify no swap is activated 
 
 I've noticed i only have about 12 gigs of disk free space. So i've decided to create swap file of a size of 4GB by using commmand: 
 
-`fallocate -l 4G /swapfile`
+`sudo fallocate -l 4G /swapfile`
 
 
 
 I've given proper permission to the file so only the root can modify it's contents:
 
-`chmod 600 /swapfile`
+`sudo chmod 600 /swapfile`
 
 
 I've formatted the file so it can be used as a swap:
 
-`mkswap /swapfile`
+`sudo mkswap /swapfile`
 
 
 And enabled swap file by using:
 
-`swapon /swapfile`
+`sudo swapon /swapfile`
 
 To confirm swap have been enabled i've cheked it with `htop` and the swap file has been enabled with a size of 4GB
 
@@ -75,7 +75,7 @@ To install jenkins i need to install openjdk
 
 So i've installed it with:
 
-`apt install openjdk-11-jdk -y`
+`sudo apt install openjdk-17-jdk -y`
 
 Next thing to do is to add repo key and repo to apt
 
@@ -94,4 +94,15 @@ And now i am able to install jenkins
 
 `sudo apt-get install jenkins`
 
+Now i have to check if jenkins service have started or not 
 
+`sudo systemctl status jenkins`
+
+Ok. jenkins service has already been running if it wouldn't would have to use:
+
+`sudo systemctl start jenkins`
+
+
+To confirm jenkins is running i've entered given ip to the instane and tried connecting to jenkins with by web browser by using:
+
+`<given_ip>:8080` and it was running, YAY
