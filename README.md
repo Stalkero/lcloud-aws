@@ -187,6 +187,27 @@ And reconfigured gitlab again
 
 `sudo gitlab-ctl reconfigure`
 
+After that i need to create proper configuration of reverse proxy for nginx so i've created a configuration file `gitlab` in this path:
+
+`/etc/nginx/sites-available/gitlab`
+
+The content of this configurationa are as below:
+
+```
+server {
+    listen 80;
+    server_name gitlab.<given_domain>;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+```
+
+
 Also i've used `certbot --nginx` to create Let's Encrypt SSL Certificate
 
 
