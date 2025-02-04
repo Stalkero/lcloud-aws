@@ -47,9 +47,9 @@ I've been given information about how much disk free space is left. To confirm t
 
 To confirm i am not using any swap i used `htop` to verify no swap is activated and no such swap memory have been used
 
-I've noticed i only have about 12 gigs of disk free space. So i've decided to create swap file of a size of 4GB by using commmand: 
+I've noticed i only have about 12 gigs of disk free space. So i've decided to create swap file of a size of 2GB by using commmand: 
 
-`sudo fallocate -l 4G /swapfile`
+`sudo fallocate -l 2G /swapfile`
 
 
 
