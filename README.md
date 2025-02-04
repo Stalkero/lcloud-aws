@@ -227,3 +227,5 @@ and started gitlab
 
 
 Now i went to `https://gitlab.<given_domain>` and im wating for gitlab to start
+
+Gitlab has started
