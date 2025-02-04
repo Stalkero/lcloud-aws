@@ -185,3 +185,5 @@ ngninx['redirect_http_to_https'] = false
 And reconfigured gitlab again
 
 `sudo gitlab-ctl reconfigure`
+
+Now i went to `https://gitlab.<given_domain>` and im wating for gitlab to start
