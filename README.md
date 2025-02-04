@@ -161,3 +161,8 @@ Next step is to add the GitLab package repository and install the package:
 `curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`
 
 `sudo apt install gitlab-ce -y`
+
+
+Next step is to configure GitLab their own configuration tool:
+
+`sudo gitlab-ctl reconfigure`
