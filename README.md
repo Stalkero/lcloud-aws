@@ -39,7 +39,7 @@ Scipt gathers info as described below:
 
 ## Jenkins_sysops
 
-## Enable swap
+### Enable swap
 
 I've been given information about how much disk free space is left. To confirm this i've checked the actuall disk free space with command: 
 
@@ -69,7 +69,7 @@ And enabled swap file by using:
 
 To confirm swap have been enabled i've cheked it with `htop` and the swap file has been enabled with a size of 4GB
 
-## Installing jenkins 
+### Installing jenkins 
 
 To install jenkins i need to install openjdk 
 
