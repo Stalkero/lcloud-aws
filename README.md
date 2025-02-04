@@ -121,7 +121,8 @@ After that i need to create proper configuration of reverse proxy for nginx so i
 
 The content of this configurationa are as below:
 
-```server {
+```
+server {
     listen 80;
     server_name your-domain.r5d4.applicant.lcloud.pl;
 
@@ -131,4 +132,5 @@ The content of this configurationa are as below:
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
-}```
+}
+```
