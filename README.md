@@ -152,4 +152,12 @@ Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
 
 To install gitlab and configure it properly first thing i need to do is to install dependencies. To use correct installation steps i've used the install instruction from official gitlab website `https://about.gitlab.com/install/#ubuntu`
 
-`sudo apt-get install -y curl openssh-server ca-certificates tzdata perl`
+`sudo apt-get install -y curl openssh-server ca-certificates tzdata perl postfix`
+
+Postfix asked me to select configuration for now i've selected `No Configuration`
+
+Next step is to add the GitLab package repository and install the package:
+
+`curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`
+
+`sudo apt install gitlab-ce -y`
