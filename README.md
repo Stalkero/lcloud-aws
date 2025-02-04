@@ -146,7 +146,7 @@ And restarted jenkins
 
 Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
 
-su
+I've unlocked the jenkins with the path provived on website and installed required plugins
 
 ## Gitlab task
 
