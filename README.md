@@ -28,6 +28,31 @@ Scipt gathers info as described below:
 
 ## Enable swap
 
-I've been given information about how much disk free space is left. To confirm this i've checked the actuall disk free space with command: `df -h`
+I've been given information about how much disk free space is left. To confirm this i've checked the actuall disk free space with command: 
 
-I've noticed i only have about 12 gigs of disk free space. So i've decided to create swap file of a size of 4GB by using commmand: `fallocate -l 4G /swapfile`
+`df -h`
+
+To confirm i am not using any swap i used `htop` to verify no swap is activated and no such swap memory have been used
+
+I've noticed i only have about 12 gigs of disk free space. So i've decided to create swap file of a size of 4GB by using commmand: 
+
+`fallocate -l 4G /swapfile`
+
+
+
+I've given proper permission to the file so only the root can modify it's contents:
+
+`chmod 600 /swapfile`
+
+
+I've formatted the file so it can be used as a swap:
+
+`mkswap /swapfile`
+
+
+And enabled swap file by using:
+
+`swapon /swapfile`
+
+
+To confirm swap have been enabled i've cheked it with `htop` and the swap file has been enabled with a size of 4GB
