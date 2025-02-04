@@ -146,7 +146,7 @@ And restarted jenkins
 
 Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
 
-
+su
 
 ## Gitlab task
 
@@ -160,7 +160,7 @@ Next step is to add the GitLab package repository and install the package:
 
 `curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`
 
-`sudo apt install gitlab-ce -y`
+`sudo EXTERNAL_URL="https://gitlab.<given_domain>" apt-get install gitlab-ce`
 
 
 Next step is to configure GitLab their own configuration tool:
@@ -178,8 +178,10 @@ In this file i've uncommented following lines and changed them according to inst
 external_url 'https://gitlab.<given_domain>'
 
 ....
-letsencrypt['enable'] = true
-letsencrypt['contact_emails'] = ['your-email@example.com'] # here comes my e-mail address
+nginx['enable'] = true
+ngninx['redirect_http_to_https'] = false
 ```
 
+And reconfigured gitlab again
 
+`sudo gitlab-ctl reconfigure`
