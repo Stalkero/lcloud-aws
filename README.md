@@ -145,3 +145,11 @@ And restarted jenkins
 `sudo systemctl restart jenkins`
 
 Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
+
+
+
+## Gitlab task
+
+To install gitlab and configure it properly first thing i need to do is to install dependencies. To use correct installation steps i've used the install instruction from official gitlab website `https://about.gitlab.com/install/#ubuntu`
+
+`sudo apt-get install -y curl openssh-server ca-certificates tzdata perl`
