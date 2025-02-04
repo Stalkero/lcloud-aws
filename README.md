@@ -124,7 +124,7 @@ The content of this configurationa are as below:
 ```
 server {
     listen 80;
-    server_name your-domain.r5d4.applicant.lcloud.pl;
+    server_name jenkins.<given_domain>;
 
     location / {
         proxy_pass http://localhost:8080;
@@ -134,3 +134,14 @@ server {
     }
 }
 ```
+
+Afer writing config i've activated it with:
+
+`sudo ln -s /etc/nginx/sites-available/jenkins /etc/nginx/sites-enabled/`
+
+
+And restarted jenkins
+
+`sudo systemctl restart jenkins`
+
+Now i was able to acceess jenkins with an url `jenkins.<given_domain>`
